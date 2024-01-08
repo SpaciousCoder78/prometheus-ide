@@ -21,7 +21,7 @@ class app   {
     public app(){
         //Creating new frame
         JFrame x = new JFrame("Prometheus IDE");
-        JTextArea textArea = new JTextArea(45,150);
+        JTextArea textArea = new JTextArea(45,140);
 
 // Add the text area to the center of the layout
         x.add(textArea, BorderLayout.CENTER);
@@ -70,18 +70,28 @@ class app   {
         JMenuBar menuBar = new JMenuBar();
         JMenu fileMenu = new JMenu("File"); //Menu bar item: File
         JMenu info = new JMenu("Info");// Menu bar item: Info
+        JMenu run = new JMenu("Run");//menu bar run item
+        //adding them to menubar
         menuBar.add(fileMenu);
+        menuBar.add(run);
         menuBar.add(info);
 
+        //**********File menu option**************
         JMenuItem saveMenuItem = new JMenuItem("Save File");// File menu option: Save file
         JMenuItem newMenuItem = new JMenuItem("New File");// File menu option:New file
         JMenuItem OpenFileItem = new JMenuItem("Open File");// File menu option: Open File
         fileMenu.add(newMenuItem);//adding all the options to file menu
         fileMenu.add(saveMenuItem);
         fileMenu.add(OpenFileItem);
+        //*********Info menu options************
         JMenuItem infobox = new JMenuItem("Info");
         info.add(infobox);
+        //***********Run menu options************
+        JMenuItem runCode = new JMenuItem("Run Code");
+        run.add(runCode);
         x.setJMenuBar(menuBar);
+
+        //*********Adding action listeners to buttons***********
         saveMenuItem.addActionListener(al);//calling saving menu
         newMenuItem.addActionListener(ax);//calling new file
         OpenFileItem.addActionListener(ab);
